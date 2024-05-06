@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\V1\TicketController;
 // users
 
 
-Route::apiResource('tickets', TicketController::class);
+Route::middleware('auth:sanctum')->apiResource('tickets', TicketController::class);
 
 
 Route::get('/user', function (Request $request) {
