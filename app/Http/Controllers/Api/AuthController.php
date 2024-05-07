@@ -16,7 +16,7 @@ class AuthController extends Controller
     {
         $request->validated($request->all());
 
-        if(!Auth::attempt($request->only('email', 'password'))){
+        if (!Auth::attempt($request->only('email', 'password'))) {
             return $this->errorResponse('Invalid credentials', 401);
         }
 
@@ -25,8 +25,19 @@ class AuthController extends Controller
         return $this->ok(
             'Authenticated',
             [
-                'token' => $user->createToken('API token for ' . $user->email)->plainTextToken
+                'token' => $user->createToken(
+                    'API token for ' . $user->email,
+                    ['*'],
+                    now()->addDays(7)
+                )->plainTextToken
             ]
-            );
+        );
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return $this->ok('');
     }
 }
