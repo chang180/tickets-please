@@ -33,7 +33,7 @@ class TicketResource extends JsonResource
             'relationships' => [
                 'author' => [
                     'links' => [
-                        'self' => route('api.v1.users.show', ['user' => $this->user_id]),
+                        'self' => route('api.v1.authors.show', ['author' => $this->user_id]),
                     ],
                     'data' => [
                         'type' => 'user',
@@ -41,7 +41,7 @@ class TicketResource extends JsonResource
                     ],
                 ],
             ],
-            'includes' => new UserResource($this->whenLoaded('user')),
+            'includes' => new UserResource($this->whenLoaded('author')),
             'links' => [
                 'self' => route('api.v1.tickets.show', ['ticket' => $this->id]),
             ],
