@@ -2,9 +2,7 @@
 
 namespace App\Http\Requests\Api\V1;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class StoreTicketRequest extends FormRequest
+class StoreTicketRequest extends BaseTicketRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -34,17 +32,4 @@ class StoreTicketRequest extends FormRequest
         return $rules;
     }
 
-    /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array<string, string>
-     */
-    public function messages(): array
-    {
-        return [
-            'data.attributes.status' => 'Status must be one of: A, C, H, X',
-            'data.relationships.author.data.id.required' => 'Author ID is required',
-            'data.relationships.author.data.id.integer' => 'Author ID must be an integer',
-        ];
-    }
 }
