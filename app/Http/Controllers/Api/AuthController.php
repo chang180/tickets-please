@@ -15,10 +15,8 @@ class AuthController extends Controller
     use ApiReponses;
     public function login(LoginUserRequest $request)
     {
-        $request->validated($request->all());
-
         if (!Auth::attempt($request->only('email', 'password'))) {
-            return $this->errorResponse('Invalid credentials', 401);
+            return $this->error('Invalid credentials', 401);
         }
 
         $user = User::firstWhere('email', $request->email);
