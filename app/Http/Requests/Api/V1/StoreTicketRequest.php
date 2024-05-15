@@ -6,6 +6,8 @@ use App\Permissions\V1\Abilities;
 
 class StoreTicketRequest extends BaseTicketRequest
 {
+
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -21,20 +23,27 @@ class StoreTicketRequest extends BaseTicketRequest
      */
     public function rules(): array
     {
+        $authorIdAttr = $this->routeIs('api.v1.authors.tickets.store') ?  'author' : 'data.relationships.author.data.id';
         $rules =  [
             'data.attributes.title' => 'required|string',
             'data.attributes.description' => 'required|string',
             'data.attributes.status' => 'required|string|in:A,C,H,X',
-            'data.relationships.author.data.id' => 'required|integer|exists:users,id',
+            $authorIdAttr => 'required|integer|exists:users,id',
         ];
 
         $user = $this->user();
-        if ($this->routeIs('api.v1.tickets.store')) {
-            if ($user->tokenCan(Abilities::CreateOwnTicket)) {
-                $rules['data.relationships.author.data.id'] .= '|size:' . $user->id;
-            }
+        if ($user->tokenCan(Abilities::CreateOwnTicket)) {
+            $rules[$authorIdAttr] .= '|size:' . $user->id;
         }
-
         return $rules;
+    }
+
+    protected function prepareForValidation()
+    {
+        if ($this->routeIs('api.v1.authors.tickets.store')) {
+            $this->merge([
+                'author' => $this->route('author')
+            ]);
+        }
     }
 }
