@@ -32,14 +32,13 @@ class UserController extends ApiController
      */
     public function store(StoreUserRequest $request)
     {
-        try {
-            // plolicy
-            $this->isAble('store', User::class);
+        // plolicy
+        if ($this->isAble('store', User::class)) {
+
 
             return new UserResource(User::create($request->input('data.attributes')));
-        } catch (AuthorizationException $ex) {
-            return $this->error('You are not authorized to create a user', 403);
         }
+        return $this->error('You are not authorized to create a user', 403);
     }
 
     /**
@@ -63,12 +62,13 @@ class UserController extends ApiController
             $user = User::findOrFail($user_id);
 
             // policy
-            $this->isAble('update', $user);
+            if ($this->isAble('update', $user)) {
 
-            $user->update($request->mappedAttributes());
 
-            return new UserResource($user);
-        } catch (AuthorizationException $ex) {
+                $user->update($request->mappedAttributes());
+
+                return new UserResource($user);
+            }
             return $this->error('You are not authorized to update this user', 403);
         } catch (ModelNotFoundException $ex) {
             return $this->error('User not found', 404);
@@ -81,12 +81,12 @@ class UserController extends ApiController
             $user = User::findOrFail($user_id);
 
             // policy
-            $this->isAble('update', $user);
+            if ($this->isAble('update', $user)) {
 
-            $user->update($request->mappedAttributes());
+                $user->update($request->mappedAttributes());
 
-            return new UserResource($user);
-        } catch (AuthorizationException $ex) {
+                return new UserResource($user);
+            }
             return $this->error('You are not authorized to update this user', 403);
         } catch (ModelNotFoundException $ex) {
             return $this->error('User not found', 404);
@@ -101,12 +101,11 @@ class UserController extends ApiController
         try {
             $user = User::findOrFail($user_id);
             // policy
-            $this->isAble('delete', $user);
+            if ($this->isAble('delete', $user)) {
+                $user->delete();
 
-            $user->delete();
-
-            return $this->success('User deleted successfully');
-        } catch (AuthorizationException $ex) {
+                return $this->success('User deleted successfully');
+            }
             return $this->error('You are not authorized to delete this user', 403);
         } catch (ModelNotFoundException $ex) {
             return $this->error('User not found', 404);

@@ -31,15 +31,14 @@ class AuthorTicketsController extends ApiController
      */
     public function store(StoreTicketRequest $request, $author_id)
     {
-        try {
-            //plolicy
-            $this->isAble('store', Ticket::class);
+        //plolicy
+        if ($this->isAble('store', Ticket::class)) {
+
             return new TicketResource(
                 Ticket::create($request->mappedAttributes(['author' => 'user_id']))
             );
-        } catch (AuthorizationException $ex) {
-            return $this->error('You are not authorized to create a ticket.', 401);
         }
+        return $this->error('You are not authorized to create a ticket.', 401);
     }
 
     /**
@@ -53,14 +52,13 @@ class AuthorTicketsController extends ApiController
                 ->firstOrFail();
 
             // policy
-            $this->isAble('delete', $ticket);
-
-            $ticket->delete();
-            return $this->ok('Ticket deleted');
+            if ($this->isAble('delete', $ticket)) {
+                $ticket->delete();
+                return $this->ok('Ticket deleted');
+            }
+            return $this->error('You are not authorized to delete a ticket.', 401);
         } catch (ModelNotFoundException) {
             return $this->error('Ticket not found.', 404);
-        } catch (AuthorizationException $ex) {
-            return $this->error('You are not authorized to delete a ticket.', 401);
         }
     }
 
@@ -72,14 +70,13 @@ class AuthorTicketsController extends ApiController
                 ->firstOrFail();
 
             // policy
-            $this->isAble('replace', $ticket);
-
-            $ticket->update($request->mappedAttributes());
-            return new TicketResource($ticket);
+            if ($this->isAble('replace', $ticket)) {
+                $ticket->update($request->mappedAttributes());
+                return new TicketResource($ticket);
+            }
+            return $this->error('You are not authorized to update a ticket.', 401);
         } catch (ModelNotFoundException) {
             return $this->error('Ticket not found.', 404);
-        } catch (AuthorizationException $ex) {
-            return $this->error('You are not authorized to update a ticket.', 401);
         }
     }
 
@@ -91,14 +88,13 @@ class AuthorTicketsController extends ApiController
                 ->firstOrFail();
 
             // policy
-            $this->isAble('update', $ticket);
-
-            $ticket->update($request->mappedAttributes());
-            return new TicketResource($ticket);
+            if ($this->isAble('update', $ticket)) {
+                $ticket->update($request->mappedAttributes());
+                return new TicketResource($ticket);
+            }
+            return $this->error('You are not authorized to update a ticket.', 401);
         } catch (ModelNotFoundException) {
             return $this->error('Ticket not found.', 404);
-        } catch (AuthorizationException $ex) {
-            return $this->error('You are not authorized to update a ticket.', 401);
         }
     }
 }
