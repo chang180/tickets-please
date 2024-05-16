@@ -15,7 +15,13 @@ class AuthorsController extends ApiController
      */
     public function index(AuthorFilter $filters)
     {
-        return UserResource::collection(User::filter($filters)->paginate());
+        return UserResource::collection(
+            User::select('user.*')
+                ->join('tickets', 'tickets.user_id', '=', 'user.id')
+                ->filter($filters)
+                ->distinct()
+                ->paginate()
+        );
     }
 
     /**
