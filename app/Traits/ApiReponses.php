@@ -4,7 +4,8 @@ namespace App\Traits;
 
 trait ApiReponses
 {
-    protected function ok($message, $data = []) {
+    protected function ok($message, $data = [])
+    {
         return $this->success($message, $data, 200);
     }
 
@@ -17,11 +18,17 @@ trait ApiReponses
         ], $statusCode);
     }
 
-    protected function error($message, $statusCode)
+    protected function error($errors = [], $statusCode = null)
     {
+        if (is_string($errors)) {
+            return response()->json([
+                'error' => $errors,
+                'status' => $statusCode
+            ], $statusCode);
+        }
+
         return response()->json([
-            'error' => $message,
-            'status' => $statusCode
-        ], $statusCode);
+            'errors' => $errors,
+        ],);
     }
 }

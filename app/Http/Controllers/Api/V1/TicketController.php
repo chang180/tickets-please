@@ -32,7 +32,6 @@ class TicketController extends ApiController
     public function store(StoreTicketRequest $request)
     {
         try {
-
             // policy
             $this->isAble('store', Ticket::class);
 
@@ -46,19 +45,12 @@ class TicketController extends ApiController
     /**
      * Display the specified resource.
      */
-    public function show($ticket_id)
+    public function show(Ticket $ticket)
     {
-
-        try {
-            $ticket = Ticket::findOrFail($ticket_id);
-
-            if ($this->include('author')) {
-                return new TicketResource($ticket->load('user'));
-            }
-            return new TicketResource($ticket);
-        } catch (ModelNotFoundException) {
-            return $this->error('Ticket not found.', 404);
+        if ($this->include('author')) {
+            return new TicketResource($ticket->load('user'));
         }
+        return new TicketResource($ticket);
     }
 
     /**
