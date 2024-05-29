@@ -56,22 +56,16 @@ class TicketController extends ApiController
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTicketRequest $request, $ticket_id)
+    public function update(UpdateTicketRequest $request, Ticket $ticket)
     {
         // PATCH
-        try {
-            $ticket = Ticket::findOrFail($ticket_id);
+        // policy
+        if ($this->isAble('update', $ticket)) {
+            $ticket->update($request->mappedAttributes());
 
-            // policy
-            if ($this->isAble('update', $ticket)) {
-                $ticket->update($request->mappedAttributes());
-
-                return new TicketResource($ticket);
-            }
-            return $this->error('You are not authorized to update this ticket.', 401);
-        } catch (ModelNotFoundException $exception) {
-            return $this->error('Ticket not found.', 404);
+            return new TicketResource($ticket);
         }
+        return $this->notAuthorized('You are not authorized to update this ticket.');
     }
 
     public function replace(ReplaceTicketRequest $request, $ticket_id)

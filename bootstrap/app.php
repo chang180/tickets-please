@@ -1,11 +1,14 @@
 <?php
 
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -27,28 +30,71 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->respond(function ($request, Throwable $exception) {
             $className = get_class($exception);
 
-            if ($className == ValidationException::class) {
-                foreach ($exception->errors() as $key => $value)
-                    foreach ($value as $message) {
-                        $errors[] = [
-                            'status' => 422,
-                            'message' => $message,
-                            'source' => $key
-                        ];
-                    }
-                return new Response([
-                    'errors' => $errors
-                ]);
-            }
+            $handlers = [
+                ModelNotFoundException::class => 'handleModelNotFoundException',
+                ValidationException::class => 'handleValidationException',
+                NotFoundHttpException::class => 'handleNotFoundHttpException',
+                AuthenticationException::class => 'handleAuthenticationException',
 
-            $index = strrpos($className, '\\');
-            return new Response([
-                "errors" => [
-                    'type' => substr($className, $index + 1),
-                    'status' => 0,
-                    'message' => $exception->getMessage(),
-                    'source' => 'Line: ' . $exception->getLine() . ' in ' . $exception->getFile(),
-                ]
-            ]);
+            ];
+
+            if (array_key_exists($className, $handlers)) {
+                return $handlers[$className]($exception);
+            }
         });
     })->create();
+
+function handleAuthenticationException(AuthenticationException $exception)
+{
+    return new Response([
+        'errors' => [
+            'status' => 401,
+            'message' => 'Unauthenticated',
+            'source' => '', 
+        ]
+    ]);
+}
+
+
+
+function handleNotFoundHttpException(NotFoundHttpException $exception)
+{
+    $className = get_class($exception);
+    $index = strrpos($className, '\\');
+    return new Response([
+        'errors' => [
+            'type' => substr($className, $index + 1),
+            'status' => 0,
+            'message' => $exception->getMessage(),
+            'source' => 'Line: ' . $exception->getLine() . ' in ' . $exception->getFile(),
+        ]
+    ]);
+}
+
+
+
+function handleValidationException(ValidationException $exception)
+{
+    foreach ($exception->errors() as $key => $value)
+        foreach ($value as $message) {
+            $errors[] = [
+                'status' => 422,
+                'message' => $message,
+                'source' => $key
+            ];
+        }
+    return new Response([
+        'errors' => $errors
+    ]);
+}
+
+function handleModelNotFoundException(ModelNotFoundException $exception)
+{
+    return new Response([
+        'errors' => [
+            'status' => 404,
+            'message' => 'Resource not found',
+            'source' => $exception->getModel()
+        ]
+    ]);
+}

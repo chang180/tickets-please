@@ -31,4 +31,12 @@ trait ApiReponses
             'errors' => $errors,
         ],);
     }
+
+    protected function notAuthorized($message){
+        return $this->error([
+            'status' => 401,
+            'message' => $message,
+            'source' => '',
+        ], 401);
+    }
 }
