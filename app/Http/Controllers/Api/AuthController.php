@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     use ApiReponses;
+
+    /**
+     * Login
+     *
+     * Authenticate user and return the user's API token
+     * @unauthenticated
+     * @group Authentication
+     * @response 200 {
+     * "message": "Authenticated",
+     * "data": {
+     * "token": "{YOUR_AUTH_KEY}"
+     * },
+     * "status": 200
+     */
+
     public function login(LoginUserRequest $request)
     {
         if (!Auth::attempt($request->only('email', 'password'))) {
@@ -28,11 +43,18 @@ class AuthController extends Controller
                     'API token for ' . $user->email,
                     Abilities::getAbilities($user),
                     now()->addDays(7)
-                )->plainTextToken
+                )->plainTextToken,
             ]
         );
     }
 
+    /**
+     * Loout
+     *
+     * Signs out the user and destroys the API token
+     * @group Authentication
+     * @response 200 {}
+     */
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();

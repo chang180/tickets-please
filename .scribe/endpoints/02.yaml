@@ -1,0 +1,203 @@
+name: 'Managing Tickets'
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/tickets
+    metadata:
+      groupName: 'Managing Tickets'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get all tickets'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      sort:
+        name: sort
+        description: 'Data field(s) to sort by. Separate multiple fields with commas.'
+        required: false
+        example: 'sort=title,-created_at'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      'filter[status]':
+        name: 'filter[status]'
+        description: 'Filter by status code: A, C, H, X.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[title]':
+        name: 'filter[title]'
+        description: 'Filter by title. Wildcards are supported.'
+        required: false
+        example: '*fix*'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanQueryParameters:
+      sort: 'sort=title,-created_at'
+      'filter[title]': '*fix*'
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"type":"ticket","id":97,"attributes":{"title":"hic ducimus consequatur","status":"A","createdAt":"2024-07-16T08:48:53.000000Z","updatedAt":"2024-07-16T08:48:53.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/10"},"data":{"type":"user","id":10}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/97"}},{"type":"ticket","id":98,"attributes":{"title":"rerum dolor fuga","status":"C","createdAt":"2024-07-16T08:48:53.000000Z","updatedAt":"2024-07-16T08:48:53.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/5"},"data":{"type":"user","id":5}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/98"}},{"type":"ticket","id":99,"attributes":{"title":"exercitationem et sit","status":"X","createdAt":"2024-07-16T08:48:53.000000Z","updatedAt":"2024-07-16T08:48:53.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/6"},"data":{"type":"user","id":6}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/99"}},{"type":"ticket","id":100,"attributes":{"title":"ipsum eos labore","status":"A","createdAt":"2024-07-16T08:48:53.000000Z","updatedAt":"2024-07-16T08:48:53.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/6"},"data":{"type":"user","id":6}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/100"}},{"type":"ticket","id":84,"attributes":{"title":"repellat earum autem","status":"X","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/1"},"data":{"type":"user","id":1}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/84"}},{"type":"ticket","id":85,"attributes":{"title":"quia beatae autem","status":"H","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/10"},"data":{"type":"user","id":10}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/85"}},{"type":"ticket","id":86,"attributes":{"title":"voluptas vero eligendi","status":"C","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/8"},"data":{"type":"user","id":8}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/86"}},{"type":"ticket","id":87,"attributes":{"title":"nesciunt ut nisi","status":"A","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/8"},"data":{"type":"user","id":8}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/87"}},{"type":"ticket","id":88,"attributes":{"title":"neque nihil iste","status":"A","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/3"},"data":{"type":"user","id":3}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/88"}},{"type":"ticket","id":89,"attributes":{"title":"qui voluptate maxime","status":"H","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/9"},"data":{"type":"user","id":9}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/89"}},{"type":"ticket","id":90,"attributes":{"title":"quibusdam neque ut","status":"X","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/10"},"data":{"type":"user","id":10}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/90"}},{"type":"ticket","id":91,"attributes":{"title":"enim soluta quam","status":"A","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/3"},"data":{"type":"user","id":3}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/91"}},{"type":"ticket","id":92,"attributes":{"title":"perferendis quisquam voluptates","status":"A","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/3"},"data":{"type":"user","id":3}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/92"}},{"type":"ticket","id":93,"attributes":{"title":"provident error magni","status":"X","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/10"},"data":{"type":"user","id":10}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/93"}},{"type":"ticket","id":94,"attributes":{"title":"numquam reprehenderit consequuntur","status":"X","createdAt":"2024-07-16T08:48:52.000000Z","updatedAt":"2024-07-16T08:48:52.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/5"},"data":{"type":"user","id":5}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/94"}}],"links":{"first":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=1","last":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=7","prev":null,"next":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=2"},"meta":{"current_page":1,"from":1,"last_page":7,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=1","label":"1","active":true},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=2","label":"2","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=3","label":"3","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=4","label":"4","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=5","label":"5","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=6","label":"6","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=7","label":"7","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/tickets?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/tickets-please.laravel\/api\/v1\/tickets","per_page":15,"to":15,"total":100}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/tickets
+    metadata:
+      groupName: 'Managing Tickets'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a ticket'
+      description: 'Creates a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user.'
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data:
+        name: data
+        description: ''
+        required: true
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: true
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.title:
+        name: data.attributes.title
+        description: ''
+        required: true
+        example: odit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.description:
+        name: data.attributes.description
+        description: ''
+        required: true
+        example: 'Aut in qui aut nobis quas est alias.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.status:
+        name: data.attributes.status
+        description: ''
+        required: true
+        example: H
+        type: string
+        enumValues:
+          - A
+          - C
+          - H
+          - X
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data:
+        name: data.relationships.author.data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author:
+        name: data.relationships.author
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships:
+        name: data.relationships
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data.id:
+        name: data.relationships.author.data.id
+        description: ''
+        required: true
+        example: 19
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          title: odit
+          description: 'Aut in qui aut nobis quas est alias.'
+          status: H
+        relationships:
+          author:
+            data:
+              id: 19
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []

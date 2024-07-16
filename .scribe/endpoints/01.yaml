@@ -1,0 +1,1585 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"id":11,"name":"The manager","email":"manager@test.com","email_verified_at":"2024-07-16T08:48:53.000000Z","is_manager":true,"created_at":"2024-07-16T08:48:53.000000Z","updated_at":"2024-07-16T08:48:53.000000Z"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/tickets/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"type":"ticket","id":1,"attributes":{"title":"animi repudiandae ut","description":"Autem distinctio enim provident et dolores excepturi. Odit eaque non voluptatem quaerat repellat. Labore et optio voluptatem. Dolores nisi ut omnis est aut placeat veritatis pariatur.","status":"H","createdAt":"2024-07-16T08:48:45.000000Z","updatedAt":"2024-07-16T08:48:45.000000Z"},"relationships":{"author":{"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/9"},"data":{"type":"user","id":9}}},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/tickets\/1"}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/tickets/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/tickets/{ticket}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      ticket:
+        name: ticket
+        description: 'The ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      ticket: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data:
+        name: data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.title:
+        name: data.attributes.title
+        description: ''
+        required: true
+        example: dolore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.description:
+        name: data.attributes.description
+        description: ''
+        required: true
+        example: 'Dolore quibusdam qui sed voluptatem molestiae.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.status:
+        name: data.attributes.status
+        description: ''
+        required: true
+        example: C
+        type: string
+        enumValues:
+          - A
+          - C
+          - H
+          - X
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data:
+        name: data.relationships.author.data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author:
+        name: data.relationships.author
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships:
+        name: data.relationships
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data.id:
+        name: data.relationships.author.data.id
+        description: ''
+        required: true
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          title: dolore
+          description: 'Dolore quibusdam qui sed voluptatem molestiae.'
+          status: C
+        relationships:
+          author:
+            data:
+              id: 11
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/tickets/{ticket_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      ticket_id:
+        name: ticket_id
+        description: 'The ID of the ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      ticket_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data:
+        name: data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.title:
+        name: data.attributes.title
+        description: ''
+        required: false
+        example: alias
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.description:
+        name: data.attributes.description
+        description: ''
+        required: false
+        example: 'Quis illum quidem earum voluptatem sapiente.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.status:
+        name: data.attributes.status
+        description: ''
+        required: false
+        example: A
+        type: string
+        enumValues:
+          - A
+          - C
+          - H
+          - X
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data:
+        name: data.relationships.author.data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author:
+        name: data.relationships.author
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships:
+        name: data.relationships
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data.id:
+        name: data.relationships.author.data.id
+        description: ''
+        required: false
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          title: alias
+          description: 'Quis illum quidem earum voluptatem sapiente.'
+          status: A
+        relationships:
+          author:
+            data:
+              id: 11
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/users
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"type":"user","id":1,"attributes":{"name":"Karlie Langworth","email":"ohara.johnathan@example.org","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/1"}},{"type":"user","id":2,"attributes":{"name":"Maxie Schroeder","email":"duncan17@example.net","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/2"}},{"type":"user","id":3,"attributes":{"name":"Josue Osinski DDS","email":"orie23@example.net","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/3"}},{"type":"user","id":4,"attributes":{"name":"Cullen Braun","email":"vjast@example.com","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/4"}},{"type":"user","id":5,"attributes":{"name":"Dr. Michele Wilkinson","email":"clara.smith@example.com","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/5"}},{"type":"user","id":6,"attributes":{"name":"Arlo Prosacco","email":"qlakin@example.org","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/6"}},{"type":"user","id":7,"attributes":{"name":"Bernice Schulist II","email":"mcclure.branson@example.com","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/7"}},{"type":"user","id":8,"attributes":{"name":"Dr. Dino Price III","email":"jenkins.delta@example.net","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/8"}},{"type":"user","id":9,"attributes":{"name":"Hilton Cummerata","email":"emma.cummerata@example.com","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/9"}},{"type":"user","id":10,"attributes":{"name":"Katlyn Hansen","email":"garret.osinski@example.net","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/10"}},{"type":"user","id":11,"attributes":{"name":"The manager","email":"manager@test.com","isManager":true},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/11"}}],"links":{"first":"http:\/\/tickets-please.laravel\/api\/v1\/users?page=1","last":"http:\/\/tickets-please.laravel\/api\/v1\/users?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/users?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/tickets-please.laravel\/api\/v1\/users","per_page":15,"to":11,"total":11}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/users
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data:
+        name: data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.name:
+        name: data.attributes.name
+        description: ''
+        required: true
+        example: deleniti
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.email:
+        name: data.attributes.email
+        description: 'Must be a valid email address.'
+        required: true
+        example: nkuhlman@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.isManager:
+        name: data.attributes.isManager
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.password:
+        name: data.attributes.password
+        description: ''
+        required: true
+        example: 'b#obWUbA_)n*iI'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          name: deleniti
+          email: nkuhlman@example.net
+          isManager: false
+          password: 'b#obWUbA_)n*iI'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/users/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"type":"user","id":1,"attributes":{"name":"Karlie Langworth","email":"ohara.johnathan@example.org","isManager":false},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/1"}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/users/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/users/{user}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        description: 'The user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      user: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data:
+        name: data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.name:
+        name: data.attributes.name
+        description: ''
+        required: true
+        example: labore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.email:
+        name: data.attributes.email
+        description: 'Must be a valid email address.'
+        required: true
+        example: florencio34@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.isManager:
+        name: data.attributes.isManager
+        description: ''
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.password:
+        name: data.attributes.password
+        description: ''
+        required: true
+        example: 'R:ohN#RxdT)Soj_p'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          name: labore
+          email: florencio34@example.org
+          isManager: false
+          password: 'R:ohN#RxdT)Soj_p'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/users/{user}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        description: 'The user.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      user: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data:
+        name: data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.name:
+        name: data.attributes.name
+        description: ''
+        required: false
+        example: modi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.email:
+        name: data.attributes.email
+        description: 'Must be a valid email address.'
+        required: false
+        example: chet.paucek@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.isManager:
+        name: data.attributes.isManager
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.password:
+        name: data.attributes.password
+        description: ''
+        required: false
+        example: "9I_cC|$7zs2o'3[?V't+"
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          name: modi
+          email: chet.paucek@example.org
+          isManager: false
+          password: "9I_cC|$7zs2o'3[?V't+"
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/authors
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/authors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the author.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"type":"user","id":1,"attributes":{"name":"Karlie Langworth","email":"ohara.johnathan@example.org","isManager":false,"emailVerifiedAt":"2024-07-16T08:48:44.000000Z","createAt":"2024-07-16T08:48:45.000000Z","updatedAt":"2024-07-16T08:48:45.000000Z"},"links":{"self":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/1"}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/authors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the author.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/authors/{author_id}/tickets'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      author_id:
+        name: author_id
+        description: 'The ID of the author.'
+        required: true
+        example: fugit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      author_id: fugit
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[],"links":{"first":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/fugit\/tickets?page=1","last":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/fugit\/tickets?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/fugit\/tickets?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/fugit\/tickets","per_page":15,"to":null,"total":0}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/authors/{author_id}/tickets'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      author_id:
+        name: author_id
+        description: 'The ID of the author.'
+        required: true
+        example: eum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      author_id: eum
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data:
+        name: data
+        description: ''
+        required: true
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: true
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.title:
+        name: data.attributes.title
+        description: ''
+        required: true
+        example: blanditiis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.description:
+        name: data.attributes.description
+        description: ''
+        required: true
+        example: 'Quos aut vel labore dolorem.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.status:
+        name: data.attributes.status
+        description: ''
+        required: true
+        example: A
+        type: string
+        enumValues:
+          - A
+          - C
+          - H
+          - X
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data:
+        name: data.relationships.author.data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author:
+        name: data.relationships.author
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships:
+        name: data.relationships
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data.id:
+        name: data.relationships.author.data.id
+        description: ''
+        required: true
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          title: blanditiis
+          description: 'Quos aut vel labore dolorem.'
+          status: A
+        relationships:
+          author:
+            data:
+              id: 15
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/authors/{author_id}/tickets/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      author_id:
+        name: author_id
+        description: 'The ID of the author.'
+        required: true
+        example: occaecati
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      id:
+        name: id
+        description: 'The ID of the ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      author_id: occaecati
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/authors/{ahthor}/tickets/{ticket}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      ahthor:
+        name: ahthor
+        description: ''
+        required: true
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      ticket:
+        name: ticket
+        description: 'The ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      ahthor: aut
+      ticket: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data:
+        name: data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.title:
+        name: data.attributes.title
+        description: ''
+        required: true
+        example: eligendi
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.description:
+        name: data.attributes.description
+        description: ''
+        required: true
+        example: 'Rem et vero culpa quia fugiat.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.status:
+        name: data.attributes.status
+        description: ''
+        required: true
+        example: C
+        type: string
+        enumValues:
+          - A
+          - C
+          - H
+          - X
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data:
+        name: data.relationships.author.data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author:
+        name: data.relationships.author
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships:
+        name: data.relationships
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data.id:
+        name: data.relationships.author.data.id
+        description: ''
+        required: true
+        example: 7
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          title: eligendi
+          description: 'Rem et vero culpa quia fugiat.'
+          status: C
+        relationships:
+          author:
+            data:
+              id: 7
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/authors/{ahthor}/tickets/{ticket}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      ahthor:
+        name: ahthor
+        description: ''
+        required: true
+        example: sint
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      ticket:
+        name: ticket
+        description: 'The ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      ahthor: sint
+      ticket: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data:
+        name: data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.title:
+        name: data.attributes.title
+        description: ''
+        required: false
+        example: illum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.description:
+        name: data.attributes.description
+        description: ''
+        required: false
+        example: 'Distinctio adipisci earum eum repellendus.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.status:
+        name: data.attributes.status
+        description: ''
+        required: false
+        example: X
+        type: string
+        enumValues:
+          - A
+          - C
+          - H
+          - X
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data:
+        name: data.relationships.author.data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author:
+        name: data.relationships.author
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships:
+        name: data.relationships
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data.id:
+        name: data.relationships.author.data.id
+        description: ''
+        required: false
+        example: 13
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          title: illum
+          description: 'Distinctio adipisci earum eum repellendus.'
+          status: X
+        relationships:
+          author:
+            data:
+              id: 13
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"id":11,"name":"The manager","email":"manager@test.com","email_verified_at":"2024-07-16T08:48:53.000000Z","is_manager":true,"created_at":"2024-07-16T08:48:53.000000Z","updated_at":"2024-07-16T08:48:53.000000Z"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
