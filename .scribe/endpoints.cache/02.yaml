@@ -117,27 +117,27 @@ endpoints:
         custom: []
       data.attributes.title:
         name: data.attributes.title
-        description: ''
+        description: 'The title of the ticket.'
         required: true
-        example: odit
+        example: No-example
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       data.attributes.description:
         name: data.attributes.description
-        description: ''
+        description: 'The description of the ticket.'
         required: true
-        example: 'Aut in qui aut nobis quas est alias.'
+        example: No-example
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       data.attributes.status:
         name: data.attributes.status
-        description: ''
+        description: 'The status of the ticket.'
         required: true
-        example: H
+        example: No-example
         type: string
         enumValues:
           - A
@@ -177,7 +177,7 @@ endpoints:
         name: data.relationships.author.data.id
         description: ''
         required: true
-        example: 19
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -185,13 +185,13 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: odit
-          description: 'Aut in qui aut nobis quas est alias.'
-          status: H
+          title: No-example
+          description: No-example
+          status: No-example
         relationships:
           author:
             data:
-              id: 19
+              id: 17
     fileParameters: []
     responses: []
     responseFields: []

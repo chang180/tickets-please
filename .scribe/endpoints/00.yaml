@@ -26,7 +26,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: gabe30@example.com
+        example: johanna.hessel@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: "rK}(Cj'8^f"
+        example: 'OCb[{[BS~PE(C'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: gabe30@example.com
-      password: "rK}(Cj'8^f"
+      email: johanna.hessel@example.org
+      password: 'OCb[{[BS~PE(C'
     fileParameters: []
     responses:
       -

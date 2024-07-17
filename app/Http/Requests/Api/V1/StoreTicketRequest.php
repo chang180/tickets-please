@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 class StoreTicketRequest extends BaseTicketRequest
 {
 
-
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -28,7 +27,7 @@ class StoreTicketRequest extends BaseTicketRequest
         $user = Auth::user();
         $authorRule = 'required|integer|exists:users,id';
 
-        $rules =  [
+        $rules = [
             'data' => 'required|array',
             'data.attributes' => 'required|array',
             'data.attributes.title' => 'required|string',
@@ -45,7 +44,7 @@ class StoreTicketRequest extends BaseTicketRequest
         $rules['data.relationships.author.data.id'] = $authorRule . '|size:' . $user->id;
 
         if ($user->tokenCan(Abilities::CreateTicket)) {
-            $rules['data.relationships.author.data.id'] =  $authorRule;
+            $rules['data.relationships.author.data.id'] = $authorRule;
         }
         return $rules;
     }
@@ -54,8 +53,40 @@ class StoreTicketRequest extends BaseTicketRequest
     {
         if ($this->routeIs('api.v1.authors.tickets.store')) {
             $this->merge([
-                'author' => $this->route('author')
+                'author' => $this->route('author'),
             ]);
         }
+    }
+
+    public function bodyParameters(): array
+    {
+        $documentation = [
+            'data.attributes.title' => [
+                'description' => 'The title of the ticket',
+                'example' => 'No-example',
+            ],
+            'data.attributes.description' => [
+                'description' => 'The description of the ticket',
+                'example' => 'No-example',
+            ],
+            'data.attributes.status' => [
+                'description' => 'The status of the ticket',
+                'example' => 'No-example',
+            ],
+        ];
+
+        if ($this->routeIs('tickets.store')) {
+            $documentation['data.relationships.author.data.id'] = [
+                'description' => 'The author of the ticket',
+                'example' => 'No-example',
+            ];
+        } else {
+            $documentation['author'] = [
+                'description' => 'The author of the ticket',
+                'example' => 'No-example',
+            ];
+        }
+
+        return $documentation;
     }
 }

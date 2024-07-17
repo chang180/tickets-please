@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Tickets Please API Documentation",
-        "_postman_id": "f7a544b2-bf13-4b19-b4bc-0a35507c87da",
+        "_postman_id": "9611d548-b381-413f-8290-f0a72d950431",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"gabe30@example.com\",\"password\":\"rK}(Cj'8^f\"}"
+                            "raw": "{\"email\":\"johanna.hessel@example.org\",\"password\":\"OCb[{[BS~PE(C\"}"
                         },
                         "description": "Authenticate user and return the user's API token",
                         "auth": {
@@ -256,7 +256,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"dolore\",\"description\":\"Dolore quibusdam qui sed voluptatem molestiae.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":11}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"dolore\",\"description\":\"Esse corrupti sint facere laboriosam quae non.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":4}}}}}"
                         },
                         "description": ""
                     },
@@ -292,7 +292,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"alias\",\"description\":\"Quis illum quidem earum voluptatem sapiente.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":11}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"harum\",\"description\":\"Voluptates eos itaque quia cumque.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":{\"id\":13}}}}}"
                         },
                         "description": ""
                     },
@@ -365,7 +365,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"name\":\"deleniti\",\"email\":\"nkuhlman@example.net\",\"isManager\":false,\"password\":\"b#obWUbA_)n*iI\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"name\":\"soluta\",\"email\":\"edach@example.com\",\"isManager\":false,\"password\":\"Dlg}Jb{\"}}}"
                         },
                         "description": ""
                     },
@@ -487,7 +487,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"name\":\"labore\",\"email\":\"florencio34@example.org\",\"isManager\":false,\"password\":\"R:ohN#RxdT)Soj_p\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"name\":\"voluptate\",\"email\":\"jalen.wisoky@example.org\",\"isManager\":false,\"password\":\"M^.Q!i39{Wf\"}}}"
                         },
                         "description": ""
                     },
@@ -523,7 +523,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"name\":\"modi\",\"email\":\"chet.paucek@example.org\",\"isManager\":false,\"password\":\"9I_cC|$7zs2o'3[?V't+\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"name\":\"velit\",\"email\":\"liana75@example.net\",\"isManager\":true,\"password\":\"nB\\\/)4n\"}}}"
                         },
                         "description": ""
                     },
@@ -672,7 +672,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "fugit",
+                                    "value": "aut",
                                     "description": "The ID of the author."
                                 }
                             ]
@@ -708,7 +708,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/tickets-please.laravel\\\/api\\\/v1\\\/authors\\\/fugit\\\/tickets?page=1\",\"last\":\"http:\\\/\\\/tickets-please.laravel\\\/api\\\/v1\\\/authors\\\/fugit\\\/tickets?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/tickets-please.laravel\\\/api\\\/v1\\\/authors\\\/fugit\\\/tickets?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/tickets-please.laravel\\\/api\\\/v1\\\/authors\\\/fugit\\\/tickets\",\"per_page\":15,\"to\":null,\"total\":0}}",
+                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/tickets-please.laravel\\\/api\\\/v1\\\/authors\\\/aut\\\/tickets?page=1\",\"last\":\"http:\\\/\\\/tickets-please.laravel\\\/api\\\/v1\\\/authors\\\/aut\\\/tickets?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":null,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/tickets-please.laravel\\\/api\\\/v1\\\/authors\\\/aut\\\/tickets?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/tickets-please.laravel\\\/api\\\/v1\\\/authors\\\/aut\\\/tickets\",\"per_page\":15,\"to\":null,\"total\":0}}",
                             "name": ""
                         }
                     ]
@@ -725,7 +725,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "eum",
+                                    "value": "eligendi",
                                     "description": "The ID of the author."
                                 }
                             ]
@@ -743,7 +743,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"blanditiis\",\"description\":\"Quos aut vel labore dolorem.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":15}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"No-example\",\"description\":\"No-example\",\"status\":\"No-example\"},\"relationships\":{\"author\":{\"data\":{\"id\":19}}}}}"
                         },
                         "description": ""
                     },
@@ -761,7 +761,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "occaecati",
+                                    "value": "repellendus",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -800,7 +800,7 @@
                                 {
                                     "id": "ahthor",
                                     "key": "ahthor",
-                                    "value": "aut",
+                                    "value": "praesentium",
                                     "description": ""
                                 },
                                 {
@@ -824,7 +824,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"eligendi\",\"description\":\"Rem et vero culpa quia fugiat.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":7}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"odio\",\"description\":\"Quae accusantium labore accusamus cupiditate sunt.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":{\"id\":20}}}}}"
                         },
                         "description": ""
                     },
@@ -842,7 +842,7 @@
                                 {
                                     "id": "ahthor",
                                     "key": "ahthor",
-                                    "value": "sint",
+                                    "value": "accusamus",
                                     "description": ""
                                 },
                                 {
@@ -866,7 +866,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"illum\",\"description\":\"Distinctio adipisci earum eum repellendus.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":{\"id\":13}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"alias\",\"description\":\"Voluptatem deleniti quaerat quis dolorem.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":{\"id\":17}}}}}"
                         },
                         "description": ""
                     },
@@ -1009,7 +1009,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"odit\",\"description\":\"Aut in qui aut nobis quas est alias.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":{\"id\":19}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"No-example\",\"description\":\"No-example\",\"status\":\"No-example\"},\"relationships\":{\"author\":{\"data\":{\"id\":17}}}}}"
                         },
                         "description": "Creates a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user."
                     },

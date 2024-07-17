@@ -204,7 +204,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Dolore quibusdam qui sed voluptatem molestiae.'
+        example: 'Esse corrupti sint facere laboriosam quae non.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,7 +213,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: C
+        example: A
         type: string
         enumValues:
           - A
@@ -253,7 +253,7 @@ endpoints:
         name: data.relationships.author.data.id
         description: ''
         required: true
-        example: 11
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -262,12 +262,12 @@ endpoints:
       data:
         attributes:
           title: dolore
-          description: 'Dolore quibusdam qui sed voluptatem molestiae.'
-          status: C
+          description: 'Esse corrupti sint facere laboriosam quae non.'
+          status: A
         relationships:
           author:
             data:
-              id: 11
+              id: 4
     fileParameters: []
     responses: []
     responseFields: []
@@ -333,7 +333,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: false
-        example: alias
+        example: harum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -342,7 +342,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: false
-        example: 'Quis illum quidem earum voluptatem sapiente.'
+        example: 'Voluptates eos itaque quia cumque.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -351,7 +351,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: false
-        example: A
+        example: H
         type: string
         enumValues:
           - A
@@ -391,7 +391,7 @@ endpoints:
         name: data.relationships.author.data.id
         description: ''
         required: false
-        example: 11
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -399,13 +399,13 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: alias
-          description: 'Quis illum quidem earum voluptatem sapiente.'
-          status: A
+          title: harum
+          description: 'Voluptates eos itaque quia cumque.'
+          status: H
         relationships:
           author:
             data:
-              id: 11
+              id: 13
     fileParameters: []
     responses: []
     responseFields: []
@@ -504,7 +504,7 @@ endpoints:
         name: data.attributes.name
         description: ''
         required: true
-        example: deleniti
+        example: soluta
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -513,7 +513,7 @@ endpoints:
         name: data.attributes.email
         description: 'Must be a valid email address.'
         required: true
-        example: nkuhlman@example.net
+        example: edach@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -531,7 +531,7 @@ endpoints:
         name: data.attributes.password
         description: ''
         required: true
-        example: 'b#obWUbA_)n*iI'
+        example: 'Dlg}Jb{'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -539,10 +539,10 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          name: deleniti
-          email: nkuhlman@example.net
+          name: soluta
+          email: edach@example.com
           isManager: false
-          password: 'b#obWUbA_)n*iI'
+          password: 'Dlg}Jb{'
     fileParameters: []
     responses: []
     responseFields: []
@@ -705,7 +705,7 @@ endpoints:
         name: data.attributes.name
         description: ''
         required: true
-        example: labore
+        example: voluptate
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -714,7 +714,7 @@ endpoints:
         name: data.attributes.email
         description: 'Must be a valid email address.'
         required: true
-        example: florencio34@example.org
+        example: jalen.wisoky@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -732,7 +732,7 @@ endpoints:
         name: data.attributes.password
         description: ''
         required: true
-        example: 'R:ohN#RxdT)Soj_p'
+        example: 'M^.Q!i39{Wf'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -740,10 +740,10 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          name: labore
-          email: florencio34@example.org
+          name: voluptate
+          email: jalen.wisoky@example.org
           isManager: false
-          password: 'R:ohN#RxdT)Soj_p'
+          password: 'M^.Q!i39{Wf'
     fileParameters: []
     responses: []
     responseFields: []
@@ -809,7 +809,7 @@ endpoints:
         name: data.attributes.name
         description: ''
         required: false
-        example: modi
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -818,7 +818,7 @@ endpoints:
         name: data.attributes.email
         description: 'Must be a valid email address.'
         required: false
-        example: chet.paucek@example.org
+        example: liana75@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -827,7 +827,7 @@ endpoints:
         name: data.attributes.isManager
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -836,7 +836,7 @@ endpoints:
         name: data.attributes.password
         description: ''
         required: false
-        example: "9I_cC|$7zs2o'3[?V't+"
+        example: nB/)4n
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -844,10 +844,10 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          name: modi
-          email: chet.paucek@example.org
-          isManager: false
-          password: "9I_cC|$7zs2o'3[?V't+"
+          name: velit
+          email: liana75@example.net
+          isManager: true
+          password: nB/)4n
     fileParameters: []
     responses: []
     responseFields: []
@@ -1021,13 +1021,13 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: fugit
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      author_id: fugit
+      author_id: aut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1036,7 +1036,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[],"links":{"first":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/fugit\/tickets?page=1","last":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/fugit\/tickets?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/fugit\/tickets?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/fugit\/tickets","per_page":15,"to":null,"total":0}}'
+        content: '{"data":[],"links":{"first":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/aut\/tickets?page=1","last":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/aut\/tickets?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":null,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/aut\/tickets?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/tickets-please.laravel\/api\/v1\/authors\/aut\/tickets","per_page":15,"to":null,"total":0}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -1074,13 +1074,13 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: eum
+        example: eligendi
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      author_id: eum
+      author_id: eligendi
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1104,27 +1104,27 @@ endpoints:
         custom: []
       data.attributes.title:
         name: data.attributes.title
-        description: ''
+        description: 'The title of the ticket.'
         required: true
-        example: blanditiis
+        example: No-example
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       data.attributes.description:
         name: data.attributes.description
-        description: ''
+        description: 'The description of the ticket.'
         required: true
-        example: 'Quos aut vel labore dolorem.'
+        example: No-example
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       data.attributes.status:
         name: data.attributes.status
-        description: ''
+        description: 'The status of the ticket.'
         required: true
-        example: A
+        example: No-example
         type: string
         enumValues:
           - A
@@ -1164,7 +1164,7 @@ endpoints:
         name: data.relationships.author.data.id
         description: ''
         required: true
-        example: 15
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1172,13 +1172,13 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: blanditiis
-          description: 'Quos aut vel labore dolorem.'
-          status: A
+          title: No-example
+          description: No-example
+          status: No-example
         relationships:
           author:
             data:
-              id: 15
+              id: 19
     fileParameters: []
     responses: []
     responseFields: []
@@ -1212,7 +1212,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: occaecati
+        example: repellendus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1227,7 +1227,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      author_id: occaecati
+      author_id: repellendus
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1266,7 +1266,7 @@ endpoints:
         name: ahthor
         description: ''
         required: true
-        example: aut
+        example: praesentium
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1281,7 +1281,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      ahthor: aut
+      ahthor: praesentium
       ticket: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1308,7 +1308,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: eligendi
+        example: odio
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1317,7 +1317,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Rem et vero culpa quia fugiat.'
+        example: 'Quae accusantium labore accusamus cupiditate sunt.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1326,154 +1326,6 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: C
-        type: string
-        enumValues:
-          - A
-          - C
-          - H
-          - X
-        exampleWasSpecified: false
-        custom: []
-      data.relationships.author.data:
-        name: data.relationships.author.data
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      data.relationships.author:
-        name: data.relationships.author
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      data.relationships:
-        name: data.relationships
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      data.relationships.author.data.id:
-        name: data.relationships.author.data.id
-        description: ''
-        required: true
-        example: 7
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      data:
-        attributes:
-          title: eligendi
-          description: 'Rem et vero culpa quia fugiat.'
-          status: C
-        relationships:
-          author:
-            data:
-              id: 7
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PATCH
-    uri: 'api/v1/authors/{ahthor}/tickets/{ticket}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      ahthor:
-        name: ahthor
-        description: ''
-        required: true
-        example: sint
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      ticket:
-        name: ticket
-        description: 'The ticket.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      ahthor: sint
-      ticket: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      data.attributes:
-        name: data.attributes
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      data:
-        name: data
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      data.attributes.title:
-        name: data.attributes.title
-        description: ''
-        required: false
-        example: illum
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      data.attributes.description:
-        name: data.attributes.description
-        description: ''
-        required: false
-        example: 'Distinctio adipisci earum eum repellendus.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      data.attributes.status:
-        name: data.attributes.status
-        description: ''
-        required: false
         example: X
         type: string
         enumValues:
@@ -1513,8 +1365,8 @@ endpoints:
       data.relationships.author.data.id:
         name: data.relationships.author.data.id
         description: ''
-        required: false
-        example: 13
+        required: true
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1522,13 +1374,161 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: illum
-          description: 'Distinctio adipisci earum eum repellendus.'
+          title: odio
+          description: 'Quae accusantium labore accusamus cupiditate sunt.'
           status: X
         relationships:
           author:
             data:
-              id: 13
+              id: 20
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 2|uq1bg313pc1zPQHLkC5XFeqvx67taZpwQNYRGhVr81b6af8d'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: 'api/v1/authors/{ahthor}/tickets/{ticket}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      ahthor:
+        name: ahthor
+        description: ''
+        required: true
+        example: accusamus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      ticket:
+        name: ticket
+        description: 'The ticket.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      ahthor: accusamus
+      ticket: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      data.attributes:
+        name: data.attributes
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data:
+        name: data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.title:
+        name: data.attributes.title
+        description: ''
+        required: false
+        example: alias
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.description:
+        name: data.attributes.description
+        description: ''
+        required: false
+        example: 'Voluptatem deleniti quaerat quis dolorem.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.attributes.status:
+        name: data.attributes.status
+        description: ''
+        required: false
+        example: H
+        type: string
+        enumValues:
+          - A
+          - C
+          - H
+          - X
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data:
+        name: data.relationships.author.data
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author:
+        name: data.relationships.author
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships:
+        name: data.relationships
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      data.relationships.author.data.id:
+        name: data.relationships.author.data.id
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      data:
+        attributes:
+          title: alias
+          description: 'Voluptatem deleniti quaerat quis dolorem.'
+          status: H
+        relationships:
+          author:
+            data:
+              id: 17
     fileParameters: []
     responses: []
     responseFields: []
